@@ -8,6 +8,8 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.util.Random;
 
+import org.omg.PortableServer.POA;
+
 /**
  * 
  * @author brom
@@ -27,7 +29,6 @@ public class ClientConnection {
 	}
 
 	public void sendMessage(String message, DatagramSocket socket) {
-		
 		Random generator = new Random();
     	double failure = generator.nextDouble();
     	

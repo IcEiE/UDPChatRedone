@@ -8,6 +8,7 @@ package UDPChat.Server;
 //
 
 import java.net.*;
+import Commons.*;
 //import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -18,6 +19,8 @@ public class Server {
     private DatagramSocket m_socket;
 
     public static void main(String[] args){
+
+    PostOffice postOffice = new PostOffice();
 	if(args.length < 1) {
 	    System.err.println("Usage: java Server portnumber");
 	    System.exit(-1);

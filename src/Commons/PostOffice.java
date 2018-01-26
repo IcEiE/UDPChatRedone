@@ -12,6 +12,9 @@ public class PostOffice {
 		return packetToSend;
 	}
 	
-	
-	
+	public DatagramPacket getDatagramToReceive() {
+		byte[] buffer = new byte[1024];
+		DatagramPacket receiveablePacket = new DatagramPacket(buffer, buffer.length);
+		return receiveablePacket;
+	}
 }
