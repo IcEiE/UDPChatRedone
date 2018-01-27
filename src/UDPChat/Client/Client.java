@@ -1,6 +1,8 @@
 package UDPChat.Client;
 
 import java.awt.event.*;
+
+import Commons.PostOffice;
 //import java.io.*;
 
 
@@ -17,6 +19,7 @@ public class Client implements ActionListener {
 	}
 
 	try {
+		
 	    Client instance = new Client(args[2]);
 	    instance.connectToServer(args[0], Integer.parseInt(args[1]));
 	} catch(NumberFormatException e) {
@@ -55,7 +58,7 @@ public class Client implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 	// Since the only possible event is a carriage return in the text input field,
 	// the text in the chat input field can now be sent to the server.
-	m_connection.sendChatMessage(m_GUI.getInput());
+	m_connection.sendChatMessage(m_GUI.getInput(), m_name);
 	m_GUI.clearInput();
     }
 }
